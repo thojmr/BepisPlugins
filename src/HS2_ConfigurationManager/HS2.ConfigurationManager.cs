@@ -30,7 +30,7 @@ namespace ConfigurationManagerWrapper
             _manager = GetComponent<ConfigurationManager.ConfigurationManager>();
             _manager.OverrideHotkey = true;
 
-            bool mainGame = Application.productName == Constants.GameProcessName;
+            bool mainGame = Application.productName == Constants.GameProcessName || Application.productName == Constants.VRProcessName;
             if (mainGame)
             {
                 Harmony.CreateAndPatchAll(typeof(ConfigurationManagerWrapper));
